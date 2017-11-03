@@ -23,7 +23,7 @@
 
 import Foundation
 
-let DefaultStatusBarHeight : CGFloat = 20
+let DefaultStatusBarHeight : CGFloat = UIApplication.shared.statusBarFrame.size.height
 
 extension UIView {
     class func panelAnimation(_ duration : TimeInterval, animations : @escaping (()->()), completion : (()->())? = nil) {
@@ -109,7 +109,7 @@ extension UIWindow {
 
 public extension UIViewController {
     
-    public var sideMenuController: SideMenuController? {
+    @objc public var sideMenuController: SideMenuController? {
         return sideMenuControllerForViewController(self)
     }
     

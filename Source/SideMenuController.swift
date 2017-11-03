@@ -35,7 +35,7 @@ public extension SideMenuController {
     /**
      Toggles the side pannel visible or not.
      */
-    public func toggle() {
+    @objc public func toggle() {
         
         if !transitionInProgress {
             if !sidePanelVisible {
@@ -57,7 +57,7 @@ public extension SideMenuController {
      
      - returns: Cached UIViewController or nil
      */
-    public func viewController(forCacheIdentifier identifier: String) -> UIViewController? {
+    @objc public func viewController(forCacheIdentifier identifier: String) -> UIViewController? {
         return controllersCache[identifier]
     }
     
@@ -66,7 +66,7 @@ public extension SideMenuController {
      
      - parameter sideViewController: controller to be embedded
      */
-    public func embed(sideViewController controller: UIViewController) {
+    @objc public func embed(sideViewController controller: UIViewController) {
         if sideViewController == nil {
             
             sideViewController = controller
@@ -87,7 +87,7 @@ public extension SideMenuController {
      - parameter centerViewController: controller to be embedded
      - parameter cacheIdentifier: identifier for the view controllers cache
      */
-    public func embed(centerViewController controller: UIViewController, cacheIdentifier: String? = nil) {
+    @objc public func embed(centerViewController controller: UIViewController, cacheIdentifier: String? = nil) {
         
         if let id = cacheIdentifier {
             controllersCache[id] = controller

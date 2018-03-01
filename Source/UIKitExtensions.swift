@@ -43,7 +43,13 @@ public extension UINavigationController {
             return
         }
         
-        let button = UIButton(frame: CGRect(x: 0, y: 0, width: 40, height: 40))
+        var sizeHamburger = 40
+        if #available(iOS 11.0, *) {
+            sizeHamburger = 22
+        }
+        
+        let button = UIButton(frame: CGRect(x: 0, y: 0, width: sizeHamburger, height: sizeHamburger))
+        
         button.accessibilityIdentifier = SideMenuController.preferences.interaction.menuButtonAccessibilityIdentifier
         button.setImage(image, for: .normal)
         button.addTarget(sideMenuController, action: #selector(SideMenuController.toggle), for: UIControlEvents.touchUpInside)

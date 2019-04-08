@@ -21,7 +21,7 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
 
-open class SideContainmentSegue: UIStoryboardSegue{
+@objc open class SideContainmentSegue: UIStoryboardSegue{
     
     override open func perform() {
         if let sideController = self.source as? SideMenuController {

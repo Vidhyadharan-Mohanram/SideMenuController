@@ -113,9 +113,9 @@ extension UIWindow {
     }
 }
 
-public extension UIViewController {
+@objc public extension UIViewController {
     
-    @objc var sideMenuController: SideMenuController? {
+    var sideMenuController: SideMenuController? {
         return sideMenuControllerForViewController(self)
     }
     
